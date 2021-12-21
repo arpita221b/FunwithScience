@@ -3,6 +3,8 @@ import { Card } from 'react-bootstrap'
 import './thermodynamics.css'
 import { Link } from "react-router-dom"
 import { Helmet } from 'react-helmet'
+import Footer from '../Footer/Footer'
+// import Footer from '../Footer/Footer'
 
 export default function Thermodynamics() {
     // topics_data
@@ -57,6 +59,7 @@ export default function Thermodynamics() {
       ];
 
     return (
+        <>      
         <div className="mech__main">
             <Helmet>
                 <title>Thermodynamics | physics | Tech N Science</title>
@@ -91,5 +94,7 @@ export default function Thermodynamics() {
                 }
             </div>
         </div >
+ <Footer/>
+ </>
     ) 
 }

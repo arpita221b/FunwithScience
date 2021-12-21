@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import "./AtomicPhysics.css";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Footer from "../Footer/Footer";
 
 export default function AtomicPhysics() {
   // topics_data
@@ -20,6 +21,7 @@ export default function AtomicPhysics() {
   ];
 
   return (
+    <>
     <div className="mech__main">
       <Helmet>
         <title>Atomic | physics | Tech N Science</title>
@@ -74,5 +76,7 @@ export default function AtomicPhysics() {
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
