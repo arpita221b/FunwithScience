@@ -8,6 +8,7 @@ import atomic from "../../Images/atomic_physics.webp"
 import nuclear from "../../Images/nuclear.webp"
 import photonics from "../../Images/photonics.webp"
 import statistical from "../../Images/statistical.webp";
+import Footer from '../Footer/Footer';
 import './styles.css';
 import {Helmet} from "react-helmet";
 
@@ -80,6 +81,7 @@ function PhysicsTopic() {
 					</div>
 				</div>
 			</div>
+			<Footer/>
         </div>
     )
 }
