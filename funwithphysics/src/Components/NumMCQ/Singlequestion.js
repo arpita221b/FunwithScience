@@ -7,7 +7,7 @@ import { useLocation } from "react-router";
 import { data } from "./data";
 const Singlequestion = () => {
   const location = useLocation();
-  var { type, ques, ans } = location.state;
+  var { type, ques, ans, img } = location.state;
   const [question, setquestion] = useState(ques);
   const [answer, setanswer] = useState(ans);
   const [result, setResult] = useState([]);
@@ -115,7 +115,10 @@ const Singlequestion = () => {
                       onClick={(e) => handleClick(e)}
                       value={ansOptions.answerText}
                     >
-                      <span className="numbering">{ansOptions.answerText.slice(0,1)}</span>{ansOptions.answerText.slice(2,)}
+                      <span className="numbering">
+                        {ansOptions.answerText.slice(0, 1)}
+                      </span>
+                      {ansOptions.answerText.slice(2)}
                     </button>
                   </div>
                 );
@@ -140,11 +143,7 @@ const Singlequestion = () => {
   } else if (type === "Numerical") {
     const handleSubmit = () => {
       // eslint-disable-next-line
-      if (
-        result === answer ||
-        result === answer + 0.2 ||
-        result === answer - 0.2
-      ) {
+      if (answer - 0.2 < result <= answer + 0.2) {
         alert("Correct Answer");
         handleNext();
       } else {
@@ -199,6 +198,7 @@ const Singlequestion = () => {
         <div className="singlequestion">
           <div className="maincontent">
             <h4 className="question">{question}</h4>
+            {img && <img src={img} alt="" className="quesimg" />}
             <div className="answer-box">
               <input
                 type="number"

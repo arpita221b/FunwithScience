@@ -6,7 +6,7 @@ import "./Card.css";
 import { Context } from "../../App";
 const Singlecard = (props) => {
   const { state } = useContext(Context);
-  const user=localStorage.getItem("user");
+  const user = localStorage.getItem("user");
   return (
     <Card className="singlecard">
       <Card.Header>
@@ -28,17 +28,18 @@ const Singlecard = (props) => {
       </Card.Header>
 
       <Card.Body className="card-body">
-        <div classname="flex-column">
+        <div className="flex-column">
           <Card.Title className="card-title">{props.question}</Card.Title>
           <Card.Text className="card-text">{props.topic}</Card.Text>
         </div>
-        {state.user || user!=="null" ?(
+        {state.user || user !== "null" ? (
           <Link
             to={{
               pathname: `/questions/${props.id}`,
               state: {
                 type: props.type,
                 ques: props.question,
+                img: props.image,
                 ans: props.answer,
               },
             }}
